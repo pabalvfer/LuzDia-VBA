@@ -12,7 +12,7 @@ Esta herramienta permite determinar con **precisión las horas de orto y ocaso s
 
 El módulo permite calcular la declinación solar, mediante dos formula de aproximación, Cooper o Spencer(mas precisas, recomendada por defecto)
 
-## ¿Por qué LuzDia-VBA? (La Visión de Pablo)
+## ¿Por qué LuzDia-VBA?
 
 En mi experiencia como ingeniero en alumbrado público, he constatado la necesidad de herramientas prácticas y accesibles que vayan más allá de la mera luminotecnia. **LuzDia-VBA nace de esa necesidad:** una solución pragmática para un problema recurrente: el **cálculo preciso de las horas de funcionamiento de las instalaciones**, esencial para la eficiencia operativa y el ahorro energético.
 
