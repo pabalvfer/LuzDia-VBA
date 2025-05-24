@@ -32,12 +32,6 @@ Mi visión es **democratizar el acceso a cálculos esenciales** para que más pr
 3.  **Accede al Editor de VBA** (Alt + F11). En tu proyecto de VBA (ej. `VBAProject (TuLibro.xlsm)`), haz clic derecho en "Módulos" -> "Importar Archivo..." y selecciona `LuzDia.bas` y `Trigonometria.bas`.
 4.  **Integra las funciones** en tus propias hojas de cálculo o macros VBA llamándolas directamente en tus fórmulas.
 
-### Ejemplo de uso en Excel:
-
-```excel
-=HoraOrto(HOY(); 42,5463; -6,59083; 1; 1)  ' Hora del amanecer en Ponferrada para hoy en formato decimal, utilizando la formula de Spencer
-=HorasLuzDia(HOY(); 42,5463) ' Horas de luz en Ponferrada hoy
-=Rad2Deg(DeclinacionSolar(HOY();1)) 'Declinación solar hoy en grados
 
 ## Potencial Futuro y Hoja de Ruta
 
@@ -57,3 +51,9 @@ Para preguntas, sugerencias o colaboraciones, no dudes en contactarme:
 * **Pablo Fernández**
 * **pabalvfer@gmail.com**
 
+### Ejemplo de uso en Excel:
+
+```excel
+=HoraOrto(HOY(); 42,5463; -6,59083; 1; 1)  ' Hora del amanecer en Ponferrada para hoy en formato decimal, utilizando la formula de Spencer
+=HorasLuzDia(HOY(); 42,5463) ' Horas de luz en Ponferrada hoy
+=Rad2Deg(DeclinacionSolar(HOY();1)) 'Declinación solar hoy en grados
