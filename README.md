@@ -33,6 +33,33 @@ Mi visión es **democratizar el acceso a cálculos esenciales** para que más pr
 4.  **Integra las funciones** en tus propias hojas de cálculo o macros VBA llamándolas directamente en tus fórmulas.
 
 
+## Contenido del Módulo
+
+El módulo incluye las siguientes funciones:
+
+* `DeclinacionSolar(fecha As Variant, Optional ecuacion As Integer)`: Calcula la declinación solar.
+* `HoraOrto(dia As Variant, latitud As Double, longitud As Double, Optional outPutFormat As Integer, Optional ecuacion As Integer)`: Devuelve la hora del amanecer.
+* `HoraOcaso(dia As Variant, latitud As Double, longitud As Double, Optional outPutFormat As Integer, Optional ecuacion As Integer)`: Devuelve la hora del atardecer.
+* `HorasLuzDia(dia As Variant, latitud As Double, Optional ecuacion As Integer)`: Calcula la duración de la luz diurna.
+* `HorasNocheDia(dia As Variant, latitud As Double, Optional ecuacion As Integer)`: Calcula la duración de la noche.
+* `diaJuliano(fecha As Variant)`: Convierte una fecha a día juliano del año.
+* `AnguloDiario(diaJuliano As Double, bisiesto As Boolean, Optional hora As Double)`: Calcula el ángulo diario en radianes.
+* `EcuacionTiempo(fecha As Variant)`: Devuelve la corrección de la ecuación del tiempo.
+* `HorasDeg2Reloj(HoraDeg As Double, fecha As Variant, longitud As Double, Optional timezone As Double)`: Convierte horas solares en grados a hora local.
+* `IsLeapYear(year As Integer)`: Determina si un año es bisiesto.
+
+## Dependencias
+
+Este módulo requiere el módulo VBA 'TRIGONOMETRIA.BAS' que contiene las siguientes funciones auxiliares:
+
+* `pi()`: Devuelve el valor de Pi.
+* `Deg2Rad(Deg As Double)`: Convierte grados a radianes.
+* `Rad2Deg(Rad As Double)`: Convierte radianes a grados.
+* `ArcCos(Rad As Double)`: Calcula el arcocoseno.
+* `ArcSin(Rad As Double)`: Calcula el arcoseno.
+* `ArcTan(Rad As Double)`: Calcula la arcotangente.
+
+
 ## Potencial Futuro y Hoja de Ruta
 
 **LuzDia-VBA** es el inicio de una serie de herramientas pensadas para el ingeniero de alumbrado. Aunque esta versión está en VBA, estoy activamente trabajando en la **portabilidad y expansión de estas y otras funcionalidades a librerías de código abierto en Python.**

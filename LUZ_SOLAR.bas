@@ -1,6 +1,6 @@
 Attribute VB_Name = "LUZ_SOLAR"
 'AUTOR: PABLO ALVAREZ FERNANDEZ
-'VERSION: 1.1
+'VERSION: 1.2
 'FECHA REVISIÓN: 04/02/2025
 
 
@@ -10,6 +10,7 @@ Attribute VB_Name = "LUZ_SOLAR"
 '    Function HoraOrto(dia As Variant, latitud As Double, longitud As Double, Optional outPutFormat As Integer = HORA_NUMERIC) As Double
 '    Function HoraOcaso(dia As Variant, latitud As Double, longitud As Double, Optional outPutFormat As Integer = HORA_NUMERIC) As Double
 '    Function HorasLuzDia(dia As Variant, latitud As Double) As Double
+'    Function HorasNocheDia(dia As Variant, latitud As Double) As Double
 '    Function diaJuliano(fecha As Variant) As Integer
 '    Function AnguloDiario(diaJuliano As Double, bisiesto As Boolean, Optional hora As Double = 12) As Double
 '    Function EcuacionTiempo(fecha As Variant) As Double
@@ -188,7 +189,26 @@ Function HorasLuzDia(dia As Variant, latitud As Double, Optional ecuacion As Int
 
 End Function
 
+Function HorasNocheDia(dia As Variant, latitud As Double, Optional ecuacion As Integer = SPENCER) As Double
+    ' Calcula las horas de noche del dia
+    ' dia: orden del día del año o fecha.
+    ' latitud: Latitud en grados.
+    ' ecuacion:define la formala para el calculo de la declinación solar
+    '   SPENCER: ecuación = 1 (más precisa)
+    '   COOPER:  ecuación = 2
 
+    Dim DecSolar As Double
+    
+    HorasNocheDia = -1
+    
+    'Calcula la declinación
+    DecSolar = DeclinacionSolar(dia, ecuacion)
+    If DecSolar = -2 Then Exit Function
+
+    'Calcula el numero de horas de noche
+    HorasNocheDia = 24 - Rad2Deg(ArcCos(Cos(Deg2Rad(90.833)) / (Cos(Deg2Rad(latitud)) / Cos(DecSolar)) - Tan(Deg2Rad(latitud)) * Tan(DecSolar))) * 2 / 15
+
+End Function
 
 Function diaJuliano(fecha As Variant) As Integer
     'Calcula el dia juliano de la fecha para ese año
